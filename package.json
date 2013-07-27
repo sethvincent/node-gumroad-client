@@ -1,0 +1,28 @@
+{
+  "name": "gumroadjs",
+  "version": "0.0.0",
+  "description": "javascript api client for gumroad",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sethvincent/gumroadjs.git"
+  },
+  "keywords": [
+    "api",
+    "client",
+    "gumroad",
+    "payments",
+    "commerce"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethvincent/gumroadjs/issues"
+  },
+  "devDependencies": {
+    "request": "~2.25.0"
+  }
+}
