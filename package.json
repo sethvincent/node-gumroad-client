@@ -23,8 +23,10 @@
     "url": "https://github.com/sethvincent/gumroadjs/issues"
   },
   "devDependencies": {
-    "request": "~2.25.0",
     "nock": "~0.22.1",
     "tap": "~0.4.3"
+  },
+  "dependencies": {
+    "request": "~2.25.0"
   }
 }
