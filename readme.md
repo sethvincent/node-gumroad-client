@@ -51,6 +51,18 @@ gumroad.products.enable(id, callback)
 gumroad.products.disable(id, callback)
 > disable a product
 
+## tests
+Using nock and tap for testing.
+
+Clone this repository, then run tests:
+```
+npm test
+```
+
+Run the example in example.js:
+```
+npm example
+```
 
 ## license:
 MIT
