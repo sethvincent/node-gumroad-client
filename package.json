@@ -4,7 +4,8 @@
   "description": "javascript api client for gumroad",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "example": "node example.js"
   },
   "repository": {
     "type": "git",

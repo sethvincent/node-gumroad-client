@@ -13,6 +13,6 @@ function createSession(){
 
 function getProducts(error, response){
   response.links.forEach(function(product){
-    console.log('product: ' + product.name)
-  })
+    console.log('product: ' + product.name);
+  });
 }
