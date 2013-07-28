@@ -1,5 +1,4 @@
 var request = require('request');
-var util = require('util');
 
 module.exports = Gumroad;
 
