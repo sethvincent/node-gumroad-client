@@ -2,7 +2,6 @@ var request = require('request');
 var util = require('util');
 
 module.exports = Gumroad;
-util.inherits(Gumroad, EventEmitter);
 
 function Gumroad(email, password, callback){
   this.url = "https://api.gumroad.com/v1";
