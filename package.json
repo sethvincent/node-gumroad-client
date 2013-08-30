@@ -1,5 +1,5 @@
 {
-  "name": "gumroadjs",
+  "name": "gumroad-client",
   "version": "0.0.1",
   "description": "javascript api client for gumroad",
   "main": "index.js",

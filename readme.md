@@ -1,14 +1,14 @@
-# gumroadjs
-> a node.js api client for the gumroad api
+# gumroad-client
+> a node.js api wrapper for [gumroad.com](http://gumroad.com)
 
 ## installation:
 ```
-npm install gumroadjs
+npm install gumroad-client
 ```
 
 ## usage:
 ```
-var Gumroad = require('gumroadjs');
+var Gumroad = require('gumroad-client');
 
 var gumroad = new Gumroad('youremail', 'yourpassword', function(){
   gumroad.products.list(function(error, response){
