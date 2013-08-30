@@ -1,6 +1,6 @@
 {
   "name": "gumroad-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "javascript api client for gumroad",
   "main": "index.js",
   "scripts": {
