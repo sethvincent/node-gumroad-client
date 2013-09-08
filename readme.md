@@ -66,3 +66,10 @@ npm example
 
 ## license:
 MIT
+
+
+curl https://gumroad.com/oauth/authorize \
+  -d "client_id=ffce92e3b26cd07e870de44247c54feaa10bb3183f38a0404a86b89678a1c87d" \
+  -d "redirect_uri=http://yourapp.com/callback" \
+  -d "scope=edit_products" \
+  -X GET

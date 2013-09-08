@@ -1,18 +1,13 @@
 var Gumroad = require('./index');
 
-var email = process.env.GUMROAD_EMAIL;
-var password = process.env.GUMROAD_PASSWORD;
-
-var gumroad = new Gumroad(email, password, createSession);
-
-function createSession(){
-  console.log('connected with token ' + gumroad.token);
-
-  gumroad.products.list(getProducts);
+var auth_options = {
+  client_id: process.env.GUMROAD_CLIENT_ID,
+  redirect_uri: 'http://example.com/callback',
+  scope: 'edit_products'
 }
 
-function getProducts(error, response){
-  response.links.forEach(function(product){
-    console.log('product: ' + product.name);
-  });
-}
+var gumroad = new Gumroad();
+
+gumroad.authorize(auth_options, function(err, res){
+  console.log(err, res);
+});

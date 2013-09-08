@@ -2,40 +2,28 @@ var request = require('request');
 
 module.exports = Gumroad;
 
-function Gumroad(email, password, callback){
-  this.url = "https://api.gumroad.com/v1";
-  this.session = new Session(this);
+function Gumroad(){
+  this.url = "https://api.gumroad.com/v2/";
   this.products = new Products(this);
+}
+
+Gumroad.prototype.authorize = function(options, callback){
   var self = this;
+  var form = {
+    client_id: options.client_id,
+    redirect_uri: options.redirect_uri,
+    scope: options.scope
+  };
 
-  this.session.create(email, password, function(error, response){
-    if (error){ throw new Error; }
-    self.token = response.token;
-    callback();
-  });
-}
+  request.get('https://gumroad.com/oauth/authorize', { form: form },
+    function(error, response, body){
+      //var res = JSON.parse(body);
+      callback(error, response, body)
+    }
+  );
+};
 
 
-
-/*
-*
-* SESSIONS
-*
-*/
-
-function Session(client){ 
-  this.client = client;
-}
-
-Session.prototype.create = function(email, password, callback){
-  var options = { email: email, password: password };
-
-  this.client.post('/sessions', options, callback);
-}
-
-Session.prototype.destroy = function(callback){
-  this.client.destroy('/sessions', callback);
-}
 
 
 
@@ -50,31 +38,31 @@ function Products(client){
 }
 
 Products.prototype.create = function(options, callback){
-  this.client.post('/products', options, callback)
+  this.client.post('products', options, callback)
 }
 
 Products.prototype.retrieve = function(id, callback){
-  this.client.get('/products/' + id, callback);
+  this.client.get('products/' + id, callback);
 }
 
 Products.prototype.list = function(callback){
-  this.client.get('/products', callback);
+  this.client.get('products', callback);
 }
 
 Products.prototype.update = function(id, options, callback){
-  this.client.put('/products/' + id, options, callback);
+  this.client.put('products/' + id, options, callback);
 }
 
 Products.prototype.destroy = function(id, callback){
-  this.client.destroy('/products/' + id, callback);
+  this.client.destroy('products/' + id, callback);
 }
 
 Products.prototype.enable = function(id, callback){
-  this.client.put('/products/' + id + '/enable', callback);
+  this.client.put('products/' + id + '/enable', callback);
 }
 
 Products.prototype.disable = function(id, callback){
-  this.client.put('/products/' + id + '/disable', callback);
+  this.client.put('products/' + id + '/disable', callback);
 }
 
 
