@@ -1,6 +1,8 @@
 # gumroad-client
 > a node.js api wrapper for [gumroad.com](http://gumroad.com)
 
+Currently supports the v1 api, revisions to support the v2 oauth api is underway in the api-v2 branch.
+
 ## installation:
 ```
 npm install gumroad-client
